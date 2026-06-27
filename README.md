@@ -1,6 +1,6 @@
 # Robin Mahato Portfolio
 
-A frontend-only React/Vite portfolio foundation for IT and software roles. The design uses a vertical single-page flow where sections stay calm by default and light up on hover or focus.
+A frontend-only React/Vite portfolio foundation for IT and software roles. The design uses a polished vertical single-page flow where sections stay calm by default and light up on hover or focus.
 
 ## Tech stack
 
@@ -17,6 +17,7 @@ A frontend-only React/Vite portfolio foundation for IT and software roles. The d
 - Project cards with local image placeholders
 - Data-driven skills and projects
 - Contact form UI with client-side confirmation
+- Real resume document served from `public/resume.docx`
 - GitHub Actions build check
 
 ## Local setup

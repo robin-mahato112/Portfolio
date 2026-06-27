@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import SectionWrapper from './SectionWrapper';
 
+const links = {
+  email: 'mhtrobin123@gmail.com',
+  github: 'https://github.com/robin-mahato112',
+  linkedin: 'https://www.linkedin.com/in/robin-mahato-50a19a345/',
+};
+
 export default function Contact() {
   const [message, setMessage] = useState('');
 
@@ -14,9 +20,9 @@ export default function Contact() {
     <SectionWrapper id="contact" eyebrow="Contact" title="Let’s connect.">
       <div className="contact-grid">
         <div className="contact-links">
-          <a href="mailto:mhtrobin123@gmail.com">mhtrobin123@gmail.com</a>
-          <a href="https://github.com/robin-mahato112" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="#">LinkedIn</a>
+          <a href={`mailto:${links.email}`}>{links.email}</a>
+          <a href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>

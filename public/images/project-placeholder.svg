@@ -1,14 +1,15 @@
 <svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Project placeholder</title>
-  <desc id="desc">Abstract dark software project preview placeholder.</desc>
-  <rect width="960" height="540" fill="#0D1A17"/>
-  <rect x="72" y="72" width="816" height="396" rx="14" fill="#13241F" stroke="#25413A" stroke-width="2"/>
-  <rect x="112" y="116" width="260" height="28" rx="6" fill="#60D6A7"/>
-  <rect x="112" y="168" width="560" height="18" rx="4" fill="#9BB2AA" opacity="0.62"/>
-  <rect x="112" y="206" width="430" height="18" rx="4" fill="#9BB2AA" opacity="0.38"/>
-  <rect x="112" y="276" width="170" height="112" rx="10" fill="#07110F" stroke="#25413A"/>
-  <rect x="314" y="276" width="170" height="112" rx="10" fill="#07110F" stroke="#25413A"/>
-  <rect x="516" y="276" width="170" height="112" rx="10" fill="#07110F" stroke="#25413A"/>
-  <path d="M735 144L812 221L735 298" stroke="#7AA8FF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M770 144L847 221L770 298" stroke="#60D6A7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"/>
+  <title id="title">Project preview placeholder</title>
+  <desc id="desc">A polished dark dashboard-style placeholder for portfolio project cards.</desc>
+  <rect width="960" height="540" fill="#070C11"/>
+  <rect x="64" y="56" width="832" height="428" rx="18" fill="#101923" stroke="#263849" stroke-width="2"/>
+  <rect x="104" y="100" width="172" height="24" rx="6" fill="#6CE0B0"/>
+  <rect x="104" y="154" width="490" height="16" rx="4" fill="#A4B3BA" opacity="0.45"/>
+  <rect x="104" y="188" width="360" height="16" rx="4" fill="#A4B3BA" opacity="0.28"/>
+  <rect x="104" y="266" width="184" height="126" rx="14" fill="#081018" stroke="#294054"/>
+  <rect x="328" y="266" width="184" height="126" rx="14" fill="#081018" stroke="#294054"/>
+  <rect x="552" y="266" width="184" height="126" rx="14" fill="#081018" stroke="#294054"/>
+  <path d="M676 120C757 134 817 198 828 279C839 360 774 422 699 407C624 392 573 328 581 251C589 174 595 106 676 120Z" fill="#9DB1FF" opacity="0.16"/>
+  <path d="M675 159L746 230L675 301" stroke="#9DB1FF" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M712 159L783 230L712 301" stroke="#6CE0B0" stroke-width="17" stroke-linecap="round" stroke-linejoin="round" opacity="0.86"/>
 </svg>
