@@ -1,16 +1,16 @@
-import Section from './Section';
+import SectionWrapper from './SectionWrapper';
 
 export default function About() {
   return (
-    <Section id="about" eyebrow="About" title="A steady path into practical software and IT work.">
-      <div className="split-copy">
+    <SectionWrapper id="about" eyebrow="About" title="Focused on practical technology and steady growth.">
+      <div className="text-grid">
         <p>
-          I am a Bachelor of Information Technology student at the University of Newcastle with interests across software development, IT support, systems, networking, cybersecurity, and AI-powered applications.
+          I am a Bachelor of Information Technology student at the University of Newcastle, focused on software development, IT support, networking, cybersecurity, and AI-powered applications.
         </p>
         <p>
-          I have been interested in coding since a young age, starting with QBasic and moving through C, JavaScript, Java, Python, .NET, and full-stack web development.
+          My coding journey started with QBasic and C, then expanded into JavaScript, Java, Python, .NET, React, and Node.js.
         </p>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 }

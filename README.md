@@ -1,22 +1,22 @@
 # Robin Mahato Portfolio
 
-A frontend-only React/Vite portfolio for developer and IT roles. The site is short, responsive, theme-aware, and ready for Vercel deployment.
+A frontend-only React/Vite portfolio foundation for IT and software roles. The design uses a vertical single-page flow where sections stay calm by default and light up on hover or focus.
 
 ## Tech stack
 
 - React
 - Vite
 - CSS
-- Vercel-ready static build
+- Vercel static deployment
 
 ## Features
 
-- Dark/light mode with localStorage persistence
-- Responsive mobile navigation
-- Focus-visible and hover-active section states
-- Data-driven skills, projects, journey, and achievements
-- Accessible semantic layout
-- Project placeholders that do not break if real images are missing
+- Sticky navbar with smooth section links
+- Reusable `SectionWrapper` for dim-by-default section behaviour
+- Responsive dark theme
+- Project cards with local image placeholders
+- Data-driven skills and projects
+- Contact form UI with client-side confirmation
 - GitHub Actions build check
 
 ## Local setup
@@ -32,11 +32,11 @@ npm run dev
 npm run build
 ```
 
-## Deployment notes
+## Vercel deployment
 
-Deploy on Vercel using:
+Use these settings:
 
 - Build Command: `npm run build`
 - Output Directory: `dist`
 
-No environment variables are required.
+No backend, paid APIs, or environment variables are required.

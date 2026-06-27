@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
 
-const navItems = ['About', 'Skills', 'Projects', 'Journey', 'Achievements', 'Contact'];
+const navItems = ['Home', 'About', 'Skills', 'Projects', 'Achievements', 'Contact'];
 
-export default function Navbar({ theme, onToggleTheme }) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
   function closeMenu() {
-    setIsOpen(false);
+    setOpen(false);
   }
 
   return (
@@ -20,20 +19,18 @@ export default function Navbar({ theme, onToggleTheme }) {
           className="nav-toggle"
           type="button"
           aria-label="Toggle navigation menu"
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((current) => !current)}
+          aria-expanded={open}
+          onClick={() => setOpen((current) => !current)}
         >
           <span />
           <span />
         </button>
-        <nav className={isOpen ? 'nav-links nav-links-open' : 'nav-links'} aria-label="Primary navigation">
-          <a href="#home" onClick={closeMenu}>Home</a>
+        <nav className={open ? 'nav-links nav-links-open' : 'nav-links'} aria-label="Primary navigation">
           {navItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>
               {item}
             </a>
           ))}
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </nav>
       </div>
     </header>

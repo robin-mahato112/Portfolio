@@ -1,11 +1,11 @@
-import Section from './Section';
-import { skills } from '../data/portfolioData';
+import SectionWrapper from './SectionWrapper';
+import { skillGroups } from '../data/skills';
 
 export default function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills" title="Grouped technical foundations.">
+    <SectionWrapper id="skills" eyebrow="Skills" title="Short grouped technical foundations.">
       <div className="skill-grid">
-        {skills.map((group) => (
+        {skillGroups.map((group) => (
           <article className="skill-card" key={group.title}>
             <h3>{group.title}</h3>
             <div className="tag-list">
@@ -14,6 +14,6 @@ export default function Skills() {
           </article>
         ))}
       </div>
-    </Section>
+    </SectionWrapper>
   );
 }

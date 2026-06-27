@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import Section from './Section';
-import { profile } from '../data/portfolioData';
+import SectionWrapper from './SectionWrapper';
 
 export default function Contact() {
   const [message, setMessage] = useState('');
@@ -12,13 +11,12 @@ export default function Contact() {
   }
 
   return (
-    <Section id="contact" eyebrow="Contact" title="Open to practical IT and software opportunities.">
+    <SectionWrapper id="contact" eyebrow="Contact" title="Let’s connect.">
       <div className="contact-grid">
         <div className="contact-links">
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href={profile.linkedin}>LinkedIn</a>
-          <span>{profile.location}</span>
+          <a href="mailto:mhtrobin123@gmail.com">mhtrobin123@gmail.com</a>
+          <a href="https://github.com/robin-mahato112" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#">LinkedIn</a>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>
@@ -37,6 +35,6 @@ export default function Contact() {
           {message && <p className="form-message">{message}</p>}
         </form>
       </div>
-    </Section>
+    </SectionWrapper>
   );
 }
