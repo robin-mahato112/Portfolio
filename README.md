@@ -1,21 +1,22 @@
 # Robin Mahato Portfolio
 
-A frontend-only React/Vite portfolio foundation for IT and software roles. The design uses a polished vertical single-page flow where sections stay calm by default and light up on hover or focus.
+A recruiter-ready portfolio built with Next.js static generation. The core content is rendered into HTML at build time, so recruiters, crawlers, link previews, and ATS-style tools can see meaningful content before JavaScript runs.
 
 ## Tech stack
 
+- Next.js app router
 - React
-- Vite
 - CSS
-- Vercel static deployment
+- Static export for Vercel-ready deployment
 
 ## Features
 
-- Sticky navbar with smooth section links
-- Reusable `SectionWrapper` for dim-by-default section behaviour
-- Responsive dark theme
-- Project cards with local image placeholders
-- Data-driven skills and projects
+- Static HTML content for SEO and link previews
+- Strong metadata, Open Graph, Twitter card, favicon, and OG image placeholder
+- Dark/light mode with localStorage persistence and an early theme script to reduce reload flash
+- Sticky responsive navbar with smooth section links
+- Reusable `SectionWrapper` for calm-by-default and active-on-hover sections
+- Featured project cards with honest scope and no broken empty links
 - Contact form UI with client-side confirmation
 - Real resume document served from `public/resume.docx`
 - GitHub Actions build check
@@ -33,11 +34,13 @@ npm run dev
 npm run build
 ```
 
+The static export is written to `out/`.
+
 ## Vercel deployment
 
-Use these settings:
+Import this repository in Vercel. Vercel detects Next.js automatically.
 
 - Build Command: `npm run build`
-- Output Directory: `dist`
+- Output Directory: `out`
 
 No backend, paid APIs, or environment variables are required.

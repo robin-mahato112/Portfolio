@@ -1,6 +1,16 @@
-import { useState } from 'react';
+'use client';
 
-const navItems = ['Home', 'About', 'Skills', 'Projects', 'Achievements', 'Contact'];
+import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
+
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'Proof', href: '#proof' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Journey', href: '#journey' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,10 +37,11 @@ export default function Navbar() {
         </button>
         <nav className={open ? 'nav-links nav-links-open' : 'nav-links'} aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>
-              {item}
+            <a key={item.href} href={item.href} onClick={closeMenu}>
+              {item.label}
             </a>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

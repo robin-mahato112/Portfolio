@@ -1,11 +1,8 @@
+'use client';
+
 import { useState } from 'react';
 import SectionWrapper from './SectionWrapper';
-
-const links = {
-  email: 'mhtrobin123@gmail.com',
-  github: 'https://github.com/robin-mahato112',
-  linkedin: 'https://www.linkedin.com/in/robin-mahato-50a19a345/',
-};
+import { profile } from '../data/portfolioData';
 
 export default function Contact() {
   const [message, setMessage] = useState('');
@@ -17,12 +14,13 @@ export default function Contact() {
   }
 
   return (
-    <SectionWrapper id="contact" eyebrow="Contact" title="Let’s connect.">
+    <SectionWrapper id="contact" eyebrow="Contact" title="Open to full-stack, AI, and deployment-focused opportunities.">
       <div className="contact-grid">
         <div className="contact-links">
-          <a href={`mailto:${links.email}`}>{links.email}</a>
-          <a href={links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href={links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={profile.resume} download>Resume</a>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>
