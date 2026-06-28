@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import SectionWrapper from './SectionWrapper';
-import { profile } from '../data/portfolioData';
+import SectionShell from '../ui/SectionShell';
+import { profile } from '../../data/profile';
 
 export default function Contact() {
   const [message, setMessage] = useState('');
@@ -14,14 +14,14 @@ export default function Contact() {
   }
 
   return (
-    <SectionWrapper id="contact" eyebrow="Contact" title="Open to full-stack, AI, and deployment-focused opportunities.">
+    <SectionShell id="contact" eyebrow="Contact" title="Open to full-stack, AI, and deployment-focused opportunities.">
       <div className="contact-grid">
-        <div className="contact-links">
+        <address className="contact-links">
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href={profile.resume} download>Resume</a>
-        </div>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span>{profile.location}</span>
+        </address>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name
@@ -39,6 +39,6 @@ export default function Contact() {
           {message && <p className="form-message">{message}</p>}
         </form>
       </div>
-    </SectionWrapper>
+    </SectionShell>
   );
 }

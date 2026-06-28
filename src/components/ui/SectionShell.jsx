@@ -1,6 +1,8 @@
-export default function SectionWrapper({ id, eyebrow, title, children, className = '' }) {
+import { cn } from '../../lib/utils';
+
+export default function SectionShell({ id, eyebrow, title, children, className = '' }) {
   return (
-    <section className={`section-wrapper ${className}`} id={id}>
+    <section className={cn('section-shell', className)} id={id}>
       <div className="section-panel">
         {(eyebrow || title) && (
           <div className="section-heading">

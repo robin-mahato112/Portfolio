@@ -1,9 +1,9 @@
-import SectionWrapper from './SectionWrapper';
-import { journey } from '../data/portfolioData';
+import SectionShell from '../ui/SectionShell';
+import { journey } from '../../data/journey';
 
 export default function Journey() {
   return (
-    <SectionWrapper id="journey" eyebrow="Learning Journey" title="A practical path from fundamentals to deployable projects.">
+    <SectionShell id="journey" eyebrow="Learning Journey" title="From fundamentals to deployment-ready projects.">
       <ol className="journey-list">
         {journey.map((item, index) => (
           <li key={item}>
@@ -12,6 +12,6 @@ export default function Journey() {
           </li>
         ))}
       </ol>
-    </SectionWrapper>
+    </SectionShell>
   );
 }

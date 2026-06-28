@@ -1,25 +1,25 @@
 # Robin Mahato Portfolio
 
-A recruiter-ready portfolio built with Next.js static generation. The core content is rendered into HTML at build time, so recruiters, crawlers, link previews, and ATS-style tools can see meaningful content before JavaScript runs.
+Enterprise-grade personal developer portfolio for Robin Mahato, built as a recruiter-ready static Next.js site.
 
 ## Tech stack
 
 - Next.js app router
 - React
-- CSS
-- Static export for Vercel-ready deployment
+- Tailwind CSS tooling plus custom CSS design tokens
+- JavaScript
+- Vercel deployment
+- GitHub Actions CI
 
 ## Features
 
-- Static HTML content for SEO and link previews
-- Strong metadata, Open Graph, Twitter card, favicon, and OG image placeholder
-- Dark/light mode with localStorage persistence and an early theme script to reduce reload flash
-- Sticky responsive navbar with smooth section links
-- Reusable `SectionWrapper` for calm-by-default and active-on-hover sections
-- Featured project cards with honest scope and no broken empty links
-- Contact form UI with client-side confirmation
-- Real resume document served from `public/resume.docx`
-- GitHub Actions build check
+- Static/server-rendered content visible before JavaScript executes
+- SEO metadata, Open Graph, Twitter card, favicon, robots, sitemap, and OG image placeholder
+- Dark/light mode with localStorage persistence and early theme application
+- Enterprise-style vertical section flow with reusable `SectionShell`
+- Featured project case studies with honest scope and no broken empty buttons
+- Data-driven profile, links, projects, skills, journey, build process, and achievements
+- Accessible semantic layout, keyboard focus states, safe external links, and responsive mobile nav
 
 ## Local setup
 
@@ -36,11 +36,23 @@ npm run build
 
 The static export is written to `out/`.
 
-## Vercel deployment
+## Deployment notes
 
-Import this repository in Vercel. Vercel detects Next.js automatically.
+Deploy on Vercel with the default Next.js settings.
 
 - Build Command: `npm run build`
 - Output Directory: `out`
 
-No backend, paid APIs, or environment variables are required.
+No backend, paid APIs, secrets, or environment variables are required.
+
+## CI/CD notes
+
+GitHub Actions runs:
+
+- `npm ci`
+- `npm run lint --if-present`
+- `npm run build`
+
+## SEO notes
+
+Core content is statically rendered into HTML for recruiters, crawlers, ATS-style tools, and link previews. Replace the fallback `siteUrl` in `src/lib/seo.js` with the final production domain when deployed.
