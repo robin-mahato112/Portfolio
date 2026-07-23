@@ -25,7 +25,7 @@ export default function ThemeToggle() {
       aria-pressed={theme === 'light'}
       onClick={() => setTheme(nextTheme)}
     >
-      {nextTheme === 'light' ? 'Light' : 'Dark'}
+      <span aria-hidden="true">{nextTheme === 'light' ? 'L' : 'D'}</span>
     </button>
   );
 }

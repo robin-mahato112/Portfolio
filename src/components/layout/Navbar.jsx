@@ -5,11 +5,8 @@ import ThemeToggle from '../ui/ThemeToggle';
 
 const navItems = [
   { label: 'Home', href: '#home' },
-  { label: 'Proof', href: '#proof' },
-  { label: 'About', href: '#about' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Journey', href: '#journey' },
+  { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -21,11 +18,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className="site-header">
-      <div className="navbar">
-        <a className="brand" href="#home" onClick={closeMenu} aria-label="Robin Mahato home">
-          RM
-        </a>
+    <div className="nav-wrap">
+      <nav className="navbar" aria-label="Primary navigation">
         <button
           className="nav-toggle"
           type="button"
@@ -36,15 +30,15 @@ export default function Navbar() {
           <span />
           <span />
         </button>
-        <nav className={open ? 'nav-links nav-links-open' : 'nav-links'} aria-label="Primary navigation">
+        <div className={open ? 'nav-links nav-links-open' : 'nav-links'}>
           {navItems.map((item) => (
             <a key={item.href} href={item.href} onClick={closeMenu}>
               {item.label}
             </a>
           ))}
           <ThemeToggle />
-        </nav>
-      </div>
-    </header>
+        </div>
+      </nav>
+    </div>
   );
 }

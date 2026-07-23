@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <footer className="footer">© Robin Mahato. Built with Next.js, React, and Tailwind CSS.</footer>;
+  return <footer className="footer">{'\u00A9'} Robin Mahato.</footer>;
 }

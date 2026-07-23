@@ -1,0 +1,25 @@
+import { experience } from '../../data/resumeData';
+
+export default function Experience() {
+  return (
+    <section id="experience" className="section">
+      <h2>Experience</h2>
+      <div className="timeline">
+        {experience.map((item, index) => (
+          <article className={`timeline-item${index === 0 ? ' current' : ''}`} key={item.role}>
+            <div className="timeline-heading">
+              <h3>{item.role} <span>- {item.company}</span></h3>
+              <p>{item.dates}</p>
+            </div>
+            <ul className="details-list">
+              {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+            </ul>
+            <div className="tags">
+              {item.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
