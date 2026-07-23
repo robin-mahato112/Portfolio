@@ -9,7 +9,15 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setMessage("Thanks, I'll get back to you soon.");
+    const form = new FormData(event.currentTarget);
+    const name = form.get('name');
+    const email = form.get('email');
+    const body = form.get('message');
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${body}`);
+
+    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${mailBody}`;
+    setMessage('Your email app should open with the message ready to send. You can also call or email me directly.');
     event.currentTarget.reset();
   }
 
@@ -18,6 +26,7 @@ export default function Contact() {
       <div className="contact-grid">
         <address className="contact-links">
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={profile.phoneHref}>{profile.phone}</a>
           <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <span>{profile.location}</span>
@@ -35,7 +44,7 @@ export default function Contact() {
             Message
             <textarea name="message" rows="5" required />
           </label>
-          <button className="button button-primary" type="submit">Send Message</button>
+          <button className="button button-primary" type="submit">Open Email</button>
           {message && <p className="form-message">{message}</p>}
         </form>
       </div>

@@ -7,6 +7,8 @@ export const profile = {
     'I build practical software projects around real user problems, clean systems, and deployment-ready foundations.',
   location: 'Newcastle, NSW, Australia',
   email: links.email,
+  phone: links.phone,
+  phoneHref: links.phoneHref,
   github: links.github,
   linkedin: links.linkedin,
   resume: links.resume,
