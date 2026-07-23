@@ -37,6 +37,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow-x: clip;
   background:
     radial-gradient(ellipse at 50% 0%, var(--accent-glow), transparent 55%),
     repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 28px),
@@ -65,7 +66,7 @@ p, h1, h2, h3 { overflow-wrap: anywhere; }
   min-height: 100vh;
   margin: 0 auto;
   padding: 2rem 1.5rem 5rem;
-  overflow: hidden;
+  overflow: visible;
   counter-reset: section;
 }
 main { display: block; }
