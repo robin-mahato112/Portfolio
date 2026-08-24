@@ -1,58 +1,68 @@
 # Robin Mahato Portfolio
 
-Enterprise-grade personal developer portfolio for Robin Mahato, built as a recruiter-ready static Next.js site.
+A responsive developer portfolio built with Next.js and deployed as a static site. It presents verified experience, education, projects and contact information in a terminal-inspired interface.
 
-## Tech stack
+## Technology stack
 
-- Next.js app router
-- React
-- Tailwind CSS tooling plus custom CSS design tokens
-- JavaScript
-- Vercel deployment
-- GitHub Actions CI
-
-## Features
-
-- Static/server-rendered content visible before JavaScript executes
-- SEO metadata, Open Graph, Twitter card, favicon, robots, sitemap, and OG image placeholder
-- Dark/light mode with localStorage persistence and early theme application
-- Enterprise-style vertical section flow with reusable `SectionShell`
-- Featured project case studies with honest scope and no broken empty buttons
-- Data-driven profile, links, projects, skills, journey, build process, and achievements
-- Accessible semantic layout, keyboard focus states, safe external links, and responsive mobile nav
+- Next.js App Router and React
+- JavaScript with data-driven content modules
+- Tailwind CSS tooling and custom CSS design tokens
+- Static HTML export for Vercel
+- GitHub Actions for lint, tests and production builds
 
 ## Local setup
 
+Requirements: Node.js 20 or later and npm.
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Build
+Open `http://localhost:3000` while the development server is running.
+
+## Commands
 
 ```bash
+npm run lint
+npm test
 npm run build
 ```
 
-The static export is written to `out/`.
+The production build is statically exported to `out/`.
 
-## Deployment notes
+## Content structure
 
-Deploy on Vercel with the default Next.js settings.
+- `src/data/profile.js`: name, positioning and profile links
+- `src/data/resumeData.js`: verified experience and education
+- `src/data/projects.js`: project descriptions, scope, technology and links
+- `src/data/skills.js`: concise skill groups
+- `src/lib/seo.js`: canonical URL and social metadata
+- `public/resume.pdf`: downloadable resume
 
-- Build Command: `npm run build`
-- Output Directory: `out`
+Update data modules rather than embedding new claims directly in presentation components. Omit details that cannot be supported by the resume or project source.
 
-No backend, paid APIs, secrets, or environment variables are required.
+## Accessibility
 
-## CI/CD notes
+- Semantic headings and stable section IDs
+- Keyboard-operable navigation with Escape-to-close on mobile
+- Visible focus indicators and accessible names for compact controls
+- Decorative elements hidden from assistive technology
+- Reduced-motion support
+- Dark and light themes with local preference persistence
 
-GitHub Actions runs:
+## Deployment
 
-- `npm ci`
-- `npm run lint --if-present`
-- `npm run build`
+The site is connected to Vercel at `https://robinm.online`.
 
-## SEO notes
+- Build command: `npm run build`
+- Output directory: `out`
+- Framework: Next.js
 
-Core content is statically rendered into HTML for recruiters, crawlers, ATS-style tools, and link previews. Replace the fallback `siteUrl` in `src/lib/seo.js` with the final production domain when deployed.
+Pushes to `main` run GitHub Actions. A production deployment can also be created from the repository directory with:
+
+```bash
+npx vercel --prod
+```
+
+No backend, database, secrets or runtime environment variables are required for this portfolio.

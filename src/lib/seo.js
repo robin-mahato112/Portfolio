@@ -1,16 +1,17 @@
-export const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : 'https://robin-mahato112.github.io/Portfolio';
+export const siteUrl = 'https://robinm.online';
 
-export const siteTitle = 'Robin Mahato | Full-Stack Developer & AI Hackathon Winner';
+export const siteTitle = 'Robin Mahato | Full-Stack Developer';
 
 export const siteDescription =
-  'Portfolio of Robin Mahato, a Bachelor of Information Technology student building full-stack, AI, and cloud-ready projects including BudgetBrain AI and hackathon-winning solutions.';
+  'Portfolio of Robin Mahato, a Bachelor of Information Technology student and full-stack developer building web, AI and systems projects with React, Node.js, TypeScript, Java and PostgreSQL.';
 
 export const defaultMetadata = {
   metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
+  alternates: {
+    canonical: siteUrl,
+  },
   icons: {
     icon: '/favicon.svg',
   },

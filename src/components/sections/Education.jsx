@@ -8,7 +8,7 @@ export default function Education() {
         <article className="card logo-card" key={item.degree}>
           <div className="card-header">
             <div className="card-header-left">
-              <span className="logo-placeholder" aria-hidden="true">IT</span>
+              <span className="education-mark" aria-hidden="true">UON</span>
               <div>
                 <h3 className="card-title">{item.degree}</h3>
                 <p className="card-desc inline">{item.institution}</p>
@@ -19,7 +19,7 @@ export default function Education() {
           <div className="term-lines">
             {item.highlights.map((highlight) => <p key={highlight}><span>&gt;</span> {highlight}</p>)}
           </div>
-          <p className="courses-label"><strong>Focus:</strong></p>
+          <p className="courses-label"><strong>Relevant study:</strong></p>
           <div className="tags">
             {item.courses.map((course) => <span className="tag" key={course}>{course}</span>)}
           </div>

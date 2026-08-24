@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig = {
+  agentRules: false,
   output: 'export',
   outputFileTracingRoot: __dirname,
   images: {

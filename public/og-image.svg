@@ -1,18 +1,17 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Robin Mahato portfolio preview</title>
   <desc id="desc">Open Graph preview image for Robin Mahato's portfolio.</desc>
-  <rect width="1200" height="630" fill="#05080D"/>
+  <rect width="1200" height="630" fill="#080808"/>
   <path d="M0 0H1200V630H0V0Z" fill="url(#grid)" opacity="0.28"/>
-  <circle cx="236" cy="126" r="230" fill="#6FEBBB" opacity="0.16"/>
-  <circle cx="950" cy="198" r="270" fill="#A7B7FF" opacity="0.12"/>
-  <rect x="78" y="70" width="1044" height="490" rx="26" fill="#101821" stroke="#294057" stroke-width="2"/>
-  <text x="116" y="170" fill="#6FEBBB" font-family="Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="5">DEVELOPER / IT PORTFOLIO</text>
+  <circle cx="236" cy="126" r="230" fill="#A8FF3E" opacity="0.12"/>
+  <rect x="78" y="70" width="1044" height="490" rx="18" fill="#0D0D0D" stroke="#27331E" stroke-width="2"/>
+  <text x="116" y="170" fill="#A8FF3E" font-family="Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="5">FULL-STACK DEVELOPER</text>
   <text x="116" y="282" fill="#F1F7F5" font-family="Arial, sans-serif" font-size="84" font-weight="800">Robin Mahato</text>
-  <text x="116" y="348" fill="#C2FFE7" font-family="Arial, sans-serif" font-size="34" font-weight="700">Bachelor of IT Student | Full-Stack Developer | AI Hackathon Winner</text>
-  <text x="116" y="424" fill="#A7B6BD" font-family="Arial, sans-serif" font-size="28">Full-stack, AI, and cloud-ready projects built around practical problems.</text>
-  <rect x="116" y="474" width="238" height="54" rx="10" fill="#6FEBBB"/>
-  <text x="145" y="509" fill="#05080D" font-family="Arial, sans-serif" font-size="22" font-weight="800">BudgetBrain AI</text>
-  <rect x="382" y="474" width="270" height="54" rx="10" fill="#172331" stroke="#425D78"/>
-  <text x="414" y="509" fill="#F3C86C" font-family="Arial, sans-serif" font-size="22" font-weight="800">Hackathon Winner</text>
+  <text x="116" y="348" fill="#E8E8E8" font-family="Arial, sans-serif" font-size="32" font-weight="700">Web, AI and systems projects built around practical problems.</text>
+  <text x="116" y="424" fill="#A0A0A0" font-family="Arial, sans-serif" font-size="27">Bachelor of Information Technology - University of Newcastle</text>
+  <rect x="116" y="474" width="215" height="54" rx="8" fill="#A8FF3E"/>
+  <text x="145" y="509" fill="#080808" font-family="Arial, sans-serif" font-size="22" font-weight="800">BudgetBrain</text>
+  <rect x="356" y="474" width="192" height="54" rx="8" fill="#111111" stroke="#303030"/>
+  <text x="386" y="509" fill="#E8E8E8" font-family="Arial, sans-serif" font-size="22" font-weight="800">DirectSend</text>
   <defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="white" stroke-opacity="0.12"/></pattern></defs>
 </svg>

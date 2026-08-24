@@ -1,4 +1,4 @@
-export { profile, proofItems as highlights } from './profile';
+export { profile } from './profile';
 export { projects } from './projects';
 export { skills } from './skills';
-export { journey, buildPrinciples, achievements } from './journey';
+export { experience, education } from './resumeData';

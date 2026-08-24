@@ -1,19 +1,50 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useSyncExternalStore } from 'react';
 
-function getInitialTheme() {
-  if (typeof document === 'undefined') return 'dark';
-  return document.documentElement.dataset.theme || 'dark';
+const themeEvent = 'portfolio-theme-change';
+
+function getStoredTheme() {
+  try {
+    const saved = localStorage.getItem('portfolio-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+  } catch {
+    // System preference remains available when storage is blocked.
+  }
+
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function subscribe(callback) {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+  window.addEventListener(themeEvent, callback);
+  window.addEventListener('storage', callback);
+  mediaQuery.addEventListener('change', callback);
+
+  return () => {
+    window.removeEventListener(themeEvent, callback);
+    window.removeEventListener('storage', callback);
+    mediaQuery.removeEventListener('change', callback);
+  };
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(getInitialTheme);
+  const theme = useSyncExternalStore(subscribe, getStoredTheme, () => 'dark');
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
+
+  function toggleTheme() {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem('portfolio-theme', next);
+    } catch {
+      // The selected theme still applies for this page when storage is unavailable.
+    }
+    window.dispatchEvent(new Event(themeEvent));
+  }
 
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
@@ -23,7 +54,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label={`Switch to ${nextTheme} mode`}
       aria-pressed={theme === 'light'}
-      onClick={() => setTheme(nextTheme)}
+      onClick={toggleTheme}
     >
       <span aria-hidden="true">{nextTheme === 'light' ? 'L' : 'D'}</span>
     </button>

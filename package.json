@@ -5,18 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "lint": "eslint .",
+    "test": "node --test",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "next": "^15.5.19",
+    "next": "^16.3.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "autoprefixer": "^10.5.2",
-    "postcss": "^8.5.15",
-    "tailwindcss": "^4.3.1"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.2",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3"
   }
 }
