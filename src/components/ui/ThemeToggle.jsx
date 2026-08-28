@@ -12,19 +12,16 @@ function getStoredTheme() {
     // System preference remains available when storage is blocked.
   }
 
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  return 'dark';
 }
 
 function subscribe(callback) {
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
   window.addEventListener(themeEvent, callback);
   window.addEventListener('storage', callback);
-  mediaQuery.addEventListener('change', callback);
 
   return () => {
     window.removeEventListener(themeEvent, callback);
     window.removeEventListener('storage', callback);
-    mediaQuery.removeEventListener('change', callback);
   };
 }
 

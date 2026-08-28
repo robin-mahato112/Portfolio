@@ -4,11 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import ThemeToggle from '../ui/ThemeToggle';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Education', href: '#education' },
+  { label: 'Profile', href: '#experience' },
+  { label: 'Stack', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -37,6 +35,10 @@ export default function Navbar() {
   return (
     <div className="nav-wrap">
       <nav className="navbar" aria-label="Primary navigation">
+        <a className="site-mark" href="#home" onClick={closeMenu} aria-label="Robin Mahato, home">
+          <span aria-hidden="true">R</span>
+          <strong>ROBIN MAHATO</strong>
+        </a>
         <button
           ref={toggleRef}
           className="nav-toggle"
@@ -57,6 +59,7 @@ export default function Navbar() {
           ))}
           <ThemeToggle />
         </div>
+        <p className="availability"><span aria-hidden="true" /> AVAILABLE · 2026</p>
       </nav>
     </div>
   );

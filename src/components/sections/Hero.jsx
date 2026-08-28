@@ -2,26 +2,29 @@ import { profile } from '../../data/profile';
 
 export default function Hero() {
   return (
-    <header id="home" className="hero">
-      <p className="terminal-prompt">&gt; whoami</p>
-      <h1>
-        {profile.name}
-        <span className="cursor-block" aria-hidden="true" />
-      </h1>
-      <p className="alias-line">
-        <span>&gt;</span> role=<strong>&quot;Full-Stack Developer&quot;</strong>
-      </p>
-      <p className="hero-headline">Full-Stack Developer building practical software across web, AI and systems.</p>
-      <p className="bio-text">
-        I&apos;m a Bachelor of Information Technology student at the University of Newcastle with
-        experience building full-stack web applications, peer-to-peer tools and AI-assisted products.
-        My background also includes network support experience and a first-place AI hackathon result.
-      </p>
-      <div className="social-links" aria-label="Profile links">
-        <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GH</a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">in</a>
-        <a href={`mailto:${profile.email}`} aria-label="Email Robin">@</a>
-        <a href={profile.resume} aria-label="Download Robin's resume" download>CV</a>
+    <header id="home" className="hero lab-hero">
+      <div className="hero-copy">
+        <p className="eyebrow">FULL-STACK DEVELOPER / AI HACKATHON WINNER</p>
+        <h1>BUILDING<br /><span>USEFUL</span><br />SYSTEMS.</h1>
+        <p className="hero-summary">
+          I prototype, test and deploy software around problems worth solving. Bachelor of IT student
+          at the University of Newcastle, based in Newcastle, Australia.
+        </p>
+        <div className="hero-actions">
+          <a className="text-link" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
+          <a className="text-link" href={profile.resume} download>Download resume <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div className="skill-orbit" aria-label="Core technical focus: Next.js, Node.js, cloud, Java and AI">
+        <span className="orbit-ring ring-outer" aria-hidden="true" />
+        <span className="orbit-ring ring-middle" aria-hidden="true" />
+        <span className="orbit-ring ring-inner" aria-hidden="true" />
+        <span className="orbit-core" aria-hidden="true">RM<small>NEWCASTLE</small></span>
+        <span className="orbit-node node-next">NEXT.JS</span>
+        <span className="orbit-node node-node">NODE</span>
+        <span className="orbit-node node-cloud">CLOUD</span>
+        <span className="orbit-node node-java">JAVA</span>
+        <span className="orbit-node node-ai">AI</span>
       </div>
     </header>
   );
