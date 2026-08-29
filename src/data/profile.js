@@ -1,11 +1,11 @@
 import { links } from './links';
+import { portfolio } from './portfolioContent.js';
 
 export const profile = {
-  name: 'Robin Mahato',
-  title: 'Full-Stack Developer',
-  intro:
-    'Full-Stack Developer building practical software across web, AI and systems.',
-  location: 'Newcastle, NSW, Australia',
+  name: portfolio.site.name,
+  title: portfolio.site.title,
+  intro: portfolio.hero.summary,
+  location: portfolio.site.location,
   email: links.email,
   github: links.github,
   linkedin: links.linkedin,

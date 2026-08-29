@@ -7,6 +7,9 @@ import Skills from '../components/sections/Skills';
 import Education from '../components/sections/Education';
 import Contact from '../components/sections/Contact';
 import BudgetLab from '../components/sections/BudgetLab';
+import Certifications from '../components/sections/Certifications';
+import Topics from '../components/sections/Topics';
+import { portfolio } from '../data/portfolioContent.js';
 
 export default function HomePage() {
   return (
@@ -15,15 +18,17 @@ export default function HomePage() {
       <main>
         <Hero />
         <section className="proof-strip" aria-label="Career highlights">
-          <p><span>01 / COMPETITION</span><strong>First place</strong><small>AI Hackathon · 200+ participants</small></p>
-          <p><span>02 / PRODUCTION</span><strong>4 featured builds</strong><small>Full-stack · P2P · Java · cloud</small></p>
-          <p><span>03 / EDUCATION</span><strong>BIT · 2027</strong><small>University of Newcastle</small></p>
+          {portfolio.highlights.map((highlight) => (
+            <p key={highlight.label}><span>{highlight.label}</span><strong>{highlight.value}</strong><small>{highlight.detail}</small></p>
+          ))}
         </section>
         <BudgetLab />
         <Projects />
         <Experience />
         <Skills />
         <Education />
+        <Certifications />
+        <Topics />
         <Contact />
       </main>
       <Footer />

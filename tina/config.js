@@ -1,0 +1,202 @@
+import { defineConfig } from 'tinacms';
+
+const branch = process.env.GITHUB_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || 'main';
+
+const stringList = (name, label) => ({ type: 'string', name, label, list: true });
+
+export default defineConfig({
+  branch,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || '',
+  token: process.env.TINA_TOKEN || '',
+  build: {
+    outputFolder: 'admin',
+    publicFolder: 'public',
+  },
+  media: {
+    tina: {
+      mediaRoot: 'uploads',
+      publicFolder: 'public',
+    },
+  },
+  schema: {
+    collections: [
+      {
+        name: 'portfolio',
+        label: 'Portfolio Content',
+        path: 'content',
+        format: 'json',
+        match: { include: 'portfolio' },
+        ui: { allowedActions: { create: false, delete: false } },
+        fields: [
+          {
+            type: 'object',
+            name: 'site',
+            label: 'Identity & Links',
+            fields: [
+              { type: 'string', name: 'name', label: 'Name', required: true },
+              { type: 'string', name: 'title', label: 'Professional title', required: true },
+              { type: 'string', name: 'location', label: 'Location' },
+              { type: 'string', name: 'email', label: 'Email' },
+              { type: 'string', name: 'github', label: 'GitHub URL' },
+              { type: 'string', name: 'linkedin', label: 'LinkedIn URL' },
+              { type: 'image', name: 'resume', label: 'Resume PDF' },
+              { type: 'string', name: 'availability', label: 'Availability label' },
+              { type: 'string', name: 'footer', label: 'Footer line' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'hero',
+            label: 'Hero',
+            fields: [
+              { type: 'string', name: 'eyebrow', label: 'Positioning line' },
+              { type: 'string', name: 'lineOne', label: 'Headline line 1', required: true },
+              { type: 'string', name: 'accentLine', label: 'Accent headline line', required: true },
+              { type: 'string', name: 'lineThree', label: 'Headline line 3', required: true },
+              { type: 'string', name: 'summary', label: 'Introduction', ui: { component: 'textarea' } },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'highlights',
+            label: 'Proof Strip',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.value || 'Highlight' }) },
+            fields: [
+              { type: 'string', name: 'label', label: 'Small label' },
+              { type: 'string', name: 'value', label: 'Main proof', required: true },
+              { type: 'string', name: 'detail', label: 'Supporting detail' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'lab',
+            label: 'BudgetBrain Lab',
+            fields: [
+              { type: 'string', name: 'eyebrow', label: 'Small label' },
+              { type: 'string', name: 'heading', label: 'Heading' },
+              { type: 'string', name: 'label', label: 'Project label' },
+              { type: 'string', name: 'note', label: 'Simulation disclaimer', ui: { component: 'textarea' } },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'headings',
+            label: 'Section Headings',
+            fields: [
+              { type: 'string', name: 'projectsEyebrow', label: 'Projects small label' },
+              { type: 'string', name: 'projects', label: 'Projects heading' },
+              { type: 'string', name: 'experience', label: 'Experience heading' },
+              { type: 'string', name: 'skills', label: 'Skills heading' },
+              { type: 'string', name: 'education', label: 'Education heading' },
+              { type: 'string', name: 'certifications', label: 'Certifications heading' },
+              { type: 'string', name: 'topics', label: 'Custom topics heading' },
+              { type: 'string', name: 'contact', label: 'Contact heading' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'projects',
+            label: 'Projects',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.title || 'Project' }) },
+            fields: [
+              { type: 'string', name: 'title', label: 'Title', required: true },
+              { type: 'string', name: 'badge', label: 'Badge' },
+              { type: 'string', name: 'built', label: 'Description', ui: { component: 'textarea' } },
+              stringList('scope', 'Technical proof points'),
+              stringList('tech', 'Technologies'),
+              { type: 'string', name: 'status', label: 'Scope/status note', ui: { component: 'textarea' } },
+              { type: 'string', name: 'linkLabel', label: 'Link label' },
+              { type: 'string', name: 'linkUrl', label: 'Link URL' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'experience',
+            label: 'Experience',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.role || 'Experience' }) },
+            fields: [
+              { type: 'string', name: 'role', label: 'Role', required: true },
+              { type: 'string', name: 'company', label: 'Company' },
+              { type: 'string', name: 'dates', label: 'Dates' },
+              stringList('details', 'Responsibilities and outcomes'),
+              stringList('tags', 'Tags'),
+            ],
+          },
+          {
+            type: 'object',
+            name: 'skills',
+            label: 'Skill Groups',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.title || 'Skill group' }) },
+            fields: [
+              { type: 'string', name: 'title', label: 'Group title', required: true },
+              stringList('items', 'Skills'),
+            ],
+          },
+          {
+            type: 'object',
+            name: 'education',
+            label: 'Education',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.degree || 'Education' }) },
+            fields: [
+              { type: 'string', name: 'degree', label: 'Degree', required: true },
+              { type: 'string', name: 'institution', label: 'Institution' },
+              { type: 'string', name: 'dates', label: 'Dates' },
+              stringList('highlights', 'Highlights'),
+              stringList('courses', 'Relevant study'),
+            ],
+          },
+          {
+            type: 'object',
+            name: 'certifications',
+            label: 'Certifications & Proof',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.title || 'Certification' }) },
+            fields: [
+              { type: 'string', name: 'title', label: 'Certification title', required: true },
+              { type: 'string', name: 'issuer', label: 'Issuer' },
+              { type: 'string', name: 'issuedDate', label: 'Issued date' },
+              { type: 'string', name: 'credentialId', label: 'Credential ID' },
+              { type: 'string', name: 'credentialUrl', label: 'Verification URL' },
+              { type: 'string', name: 'summary', label: 'Summary', ui: { component: 'textarea' } },
+              { type: 'image', name: 'image', label: 'Preview image' },
+              { type: 'string', name: 'imageAlt', label: 'Image description' },
+              { type: 'image', name: 'evidenceFile', label: 'Evidence document (PDF or image)' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'topics',
+            label: 'Custom Topics',
+            list: true,
+            ui: { itemProps: (item) => ({ label: item?.heading || 'Topic' }) },
+            fields: [
+              { type: 'string', name: 'kicker', label: 'Small label' },
+              { type: 'string', name: 'heading', label: 'Topic heading', required: true },
+              { type: 'string', name: 'body', label: 'Body', ui: { component: 'textarea' } },
+              { type: 'image', name: 'image', label: 'Image' },
+              { type: 'string', name: 'imageAlt', label: 'Image description' },
+              { type: 'image', name: 'evidenceFile', label: 'Document or proof file' },
+              { type: 'string', name: 'linkLabel', label: 'Link label' },
+              { type: 'string', name: 'linkUrl', label: 'Link URL' },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'contact',
+            label: 'Contact Section',
+            fields: [
+              { type: 'string', name: 'command', label: 'Small label' },
+              { type: 'string', name: 'headline', label: 'Headline' },
+              { type: 'string', name: 'summary', label: 'Summary', ui: { component: 'textarea' } },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+});

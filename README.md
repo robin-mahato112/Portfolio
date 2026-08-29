@@ -1,6 +1,6 @@
 # Robin Mahato Portfolio
 
-A responsive developer portfolio built with Next.js and deployed as a static site. It presents verified experience, education, projects and contact information in a terminal-inspired interface.
+A responsive developer portfolio built with Next.js, TinaCMS and a static Vercel deployment. Verified portfolio content can be maintained through a private editor without changing React code.
 
 ## Technology stack
 
@@ -8,6 +8,7 @@ A responsive developer portfolio built with Next.js and deployed as a static sit
 - JavaScript with data-driven content modules
 - Tailwind CSS tooling and custom CSS design tokens
 - Static HTML export for Vercel
+- TinaCMS with GitHub-backed JSON content and repository media
 - GitHub Actions for lint, tests and production builds
 
 ## Local setup
@@ -20,6 +21,7 @@ npm run dev
 ```
 
 Open `http://localhost:3000` while the development server is running.
+The local content editor is available at `http://localhost:3000/admin/index.html`.
 
 ## Commands
 
@@ -31,16 +33,24 @@ npm run build
 
 The production build is statically exported to `out/`.
 
-## Content structure
+## Content editor
 
-- `src/data/profile.js`: name, positioning and profile links
-- `src/data/resumeData.js`: verified experience and education
-- `src/data/projects.js`: project descriptions, scope, technology and links
-- `src/data/skills.js`: concise skill groups
+- `content/portfolio.json`: the source of truth for editable portfolio content
+- `tina/config.js`: editor fields, collections and repository media configuration
+- `public/uploads/`: certificate images, PDFs and proof documents uploaded by Tina
 - `src/lib/seo.js`: canonical URL and social metadata
 - `public/resume.pdf`: downloadable resume
 
-Update data modules rather than embedding new claims directly in presentation components. Omit details that cannot be supported by the resume or project source.
+The editor supports projects, proof highlights, experience, skill groups, education, certifications, PDFs/images, custom topic sections and contact copy. Omit details that cannot be supported by the resume or project source.
+
+For production editing, create a TinaCloud project connected to `robin-mahato112/Portfolio` and configure these Vercel environment variables:
+
+```text
+NEXT_PUBLIC_TINA_CLIENT_ID
+TINA_TOKEN
+```
+
+Then rebuild the deployment. The editor is available at `https://robinm.online/admin/index.html`; publishing commits the updated JSON and uploaded media to GitHub, triggering Vercel.
 
 ## Accessibility
 
@@ -65,4 +75,4 @@ Pushes to `main` run GitHub Actions. A production deployment can also be created
 npx vercel --prod
 ```
 
-No backend, database, secrets or runtime environment variables are required for this portfolio.
+The public site remains static. TinaCloud credentials are build-time variables used by the private editor and content API.

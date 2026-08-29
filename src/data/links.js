@@ -1,6 +1,8 @@
+import { portfolio } from './portfolioContent.js';
+
 export const links = {
-  email: 'mhtrobin123@gmail.com',
-  github: 'https://github.com/robin-mahato112',
-  linkedin: 'https://www.linkedin.com/in/robin-mahato-50a19a345/',
-  resume: '/resume.pdf',
+  email: portfolio.site.email,
+  github: portfolio.site.github,
+  linkedin: portfolio.site.linkedin,
+  resume: portfolio.site.resume,
 };

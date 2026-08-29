@@ -1,9 +1,10 @@
 import { skills } from '../../data/skills';
+import { portfolio } from '../../data/portfolioContent.js';
 
 export default function Skills() {
   return (
     <section id="skills" className="section">
-      <h2>Skills</h2>
+      <h2>{portfolio.headings.skills}</h2>
       <div className="skill-groups">
         {skills.map((group) => (
           <div className="skill-group" key={group.title}>

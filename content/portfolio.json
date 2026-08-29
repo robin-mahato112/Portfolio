@@ -1,0 +1,245 @@
+{
+  "site": {
+    "name": "Robin Mahato",
+    "title": "Full-Stack Developer",
+    "location": "Newcastle, NSW, Australia",
+    "email": "mhtrobin123@gmail.com",
+    "github": "https://github.com/robin-mahato112",
+    "linkedin": "https://www.linkedin.com/in/robin-mahato-50a19a345/",
+    "resume": "/uploads/RobinMahato-Resume.pdf",
+    "availability": "AVAILABLE · 2026",
+    "footer": "Designed and engineered in Newcastle, Australia."
+  },
+  "hero": {
+    "eyebrow": "FULL-STACK DEVELOPER / AI HACKATHON WINNER",
+    "lineOne": "BUILDING",
+    "accentLine": "USEFUL",
+    "lineThree": "SYSTEMS.",
+    "summary": "I prototype, test and deploy software around problems worth solving. Bachelor of IT student at the University of Newcastle, based in Newcastle, Australia."
+  },
+  "highlights": [
+    {
+      "label": "01 / COMPETITION",
+      "value": "First place",
+      "detail": "AI Hackathon · 200+ participants"
+    },
+    {
+      "label": "02 / PRODUCTION",
+      "value": "4 featured builds",
+      "detail": "Full-stack · P2P · Java · cloud"
+    },
+    {
+      "label": "03 / EDUCATION",
+      "value": "BIT · 2027",
+      "detail": "University of Newcastle"
+    }
+  ],
+  "lab": {
+    "eyebrow": "LIVE EXPERIMENT / 01",
+    "heading": "Can a budget tool detect pressure before payday?",
+    "label": "BUDGETBRAIN AI",
+    "note": "This demonstration uses simulated values and simplified logic. It is not financial advice and does not connect to a bank."
+  },
+  "headings": {
+    "projectsEyebrow": "SELECTED SYSTEMS / 02—05",
+    "projects": "Projects built beyond the happy path.",
+    "experience": "Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "certifications": "Certifications & Proof",
+    "topics": "More from my work",
+    "contact": "Contact"
+  },
+  "projects": [
+    {
+      "title": "BudgetBrain",
+      "badge": "Featured full-stack project",
+      "built": "A full-stack financial behaviour and payday-planning application that turns simulated balances, income and protected costs into safe-to-spend guidance and money-pressure analysis.",
+      "scope": [
+        "Deterministic safe-to-spend, protected-money and recovery-gap calculations",
+        "JWT authentication, bcrypt password hashing and Zod validation",
+        "CSV transaction import, affordability checks and recovery scenarios",
+        "Groq AI explains backend results without calculating financial truth"
+      ],
+      "tech": [
+        "React 18",
+        "Vite",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Prisma",
+        "Vitest",
+        "Supertest"
+      ],
+      "status": "Simulated financial scenarios; no real bank integration.",
+      "linkLabel": "GitHub",
+      "linkUrl": "https://github.com/robin-mahato112/budgetbrain"
+    },
+    {
+      "title": "DirectSend",
+      "badge": "Peer-to-peer CLI",
+      "built": "A TypeScript and Node.js command-line tool that streams files directly between peers over WebRTC DataChannels while a small WebSocket server relays connection metadata.",
+      "scope": [
+        "Streaming transfers with progress reporting and bounded backpressure",
+        "SHA-256 integrity verification and local filename sanitisation",
+        "Token-based rooms with expiry, duplicate-room and peer-limit handling",
+        "Two-workspace monorepo with automated Node tests"
+      ],
+      "tech": [
+        "TypeScript",
+        "Node.js",
+        "WebRTC",
+        "WebSockets",
+        "SHA-256",
+        "Node test runner"
+      ],
+      "status": "No identity management, transfer resumption or bundled TURN credentials.",
+      "linkLabel": "GitHub",
+      "linkUrl": "https://github.com/robin-mahato112/Secured-P2P-file-transfer-CLI"
+    },
+    {
+      "title": "FleetWise",
+      "badge": "First place - Innovate for Impact",
+      "built": "An AI-assisted fleet-management prototype created for HealthWISE during NGM Group's two-day Innovate for Impact Hackathon on 12-13 May 2026.",
+      "scope": [
+        "Collaborated within a six-person team under a fixed event deadline",
+        "Centralised fragmented vehicle booking and record-keeping workflows",
+        "Helped shape and present a practical solution for a regional not-for-profit",
+        "Achieved first place in an event involving more than 200 technology participants"
+      ],
+      "tech": [
+        "Applied AI",
+        "Rapid prototyping",
+        "Team delivery",
+        "Product presentation"
+      ],
+      "status": "Hackathon prototype built for HealthWISE; first-place team result.",
+      "linkLabel": "Event article",
+      "linkUrl": "https://hunterheadline.com.au/article/ngm-group-hackathon-delivers-digital-solutions-for-regional-charities"
+    },
+    {
+      "title": "UniX Course Enrolment System",
+      "badge": "University project",
+      "built": "A server-rendered Java course-enrolment system covering authentication, semester selection and enrolment workflows with clear server-side validation.",
+      "scope": [
+        "MVC and DAO structure with connection pooling",
+        "Prepared statements and bcrypt password hashing",
+        "Prerequisite, capacity and study-load business rules",
+        "Authenticated sessions, HTTPS and server-side validation"
+      ],
+      "tech": [
+        "Java",
+        "Servlets",
+        "JSP",
+        "MySQL",
+        "MVC",
+        "DAO"
+      ],
+      "status": "Private university project; no public repository.",
+      "linkLabel": "",
+      "linkUrl": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Network Support Intern",
+      "company": "Mobile Solution & Training Center, Kathmandu, Nepal",
+      "dates": "Jan 2022 - Dec 2022",
+      "details": [
+        "Configured routers and switches and diagnosed connectivity, printer, cabling and hardware issues for end users.",
+        "Maintained support logs and device inventories, explained fixes clearly and escalated complex faults with useful documentation."
+      ],
+      "tags": [
+        "Networking",
+        "Troubleshooting",
+        "Technical support",
+        "Documentation"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "title": "Frontend",
+      "items": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "title": "Backend",
+      "items": [
+        "Node.js",
+        "Express",
+        "Java Servlets",
+        "JSP",
+        "REST APIs"
+      ]
+    },
+    {
+      "title": "Databases",
+      "items": [
+        "PostgreSQL",
+        "Prisma ORM",
+        "MySQL"
+      ]
+    },
+    {
+      "title": "Languages",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "Python",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Systems",
+      "items": [
+        "Networking",
+        "Windows",
+        "Systems administration"
+      ]
+    },
+    {
+      "title": "Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "Vercel",
+        "Azure",
+        "Docker",
+        "VS Code"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Information Technology",
+      "institution": "University of Newcastle, Callaghan, NSW",
+      "dates": "Expected July 2027",
+      "highlights": [
+        "International Excellence Scholarship - AUD 15,000 per year",
+        "Practical focus across software development, data, cloud and systems"
+      ],
+      "courses": [
+        "Applied AI",
+        "Cloud Computing",
+        "Data Engineering and Mining",
+        "Web Engineering",
+        "Networking and Systems Administration",
+        "Data Structure"
+      ]
+    }
+  ],
+  "certifications": [],
+  "topics": [],
+  "contact": {
+    "command": "$ ./get-in-touch",
+    "headline": "Let's build something.",
+    "summary": "I'm seeking software internships, graduate programs and junior development roles. Email or LinkedIn is the fastest way to reach me."
+  }
+}

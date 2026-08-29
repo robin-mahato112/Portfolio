@@ -1,15 +1,13 @@
 import { profile } from '../../data/profile';
+import { portfolio } from '../../data/portfolioContent.js';
 
 export default function Hero() {
   return (
     <header id="home" className="hero lab-hero">
       <div className="hero-copy">
-        <p className="eyebrow">FULL-STACK DEVELOPER / AI HACKATHON WINNER</p>
-        <h1>BUILDING<br /><span>USEFUL</span><br />SYSTEMS.</h1>
-        <p className="hero-summary">
-          I prototype, test and deploy software around problems worth solving. Bachelor of IT student
-          at the University of Newcastle, based in Newcastle, Australia.
-        </p>
+        <p className="eyebrow">{portfolio.hero.eyebrow}</p>
+        <h1>{portfolio.hero.lineOne}<br /><span>{portfolio.hero.accentLine}</span><br />{portfolio.hero.lineThree}</h1>
+        <p className="hero-summary">{portfolio.hero.summary}</p>
         <div className="hero-actions">
           <a className="text-link" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
           <a className="text-link" href={profile.resume} download>Download resume <span aria-hidden="true">↗</span></a>

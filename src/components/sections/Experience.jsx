@@ -1,9 +1,10 @@
 import { experience } from '../../data/resumeData';
+import { portfolio } from '../../data/portfolioContent.js';
 
 export default function Experience() {
   return (
     <section id="experience" className="section">
-      <h2>Experience</h2>
+      <h2>{portfolio.headings.experience}</h2>
       <div className="timeline">
         {experience.map((item) => (
           <article className="timeline-item" key={item.role}>

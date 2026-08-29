@@ -24,17 +24,18 @@ test('primary portfolio links and canonical URL are valid', () => {
   assert.equal(siteUrl, 'https://robinm.online');
   assert.match(links.github, /^https:\/\/github\.com\//);
   assert.match(links.linkedin, /^https:\/\/www\.linkedin\.com\//);
-  assert.equal(links.resume, '/resume.pdf');
+  assert.match(links.resume, /^\/[a-zA-Z0-9/_-]+\.pdf$/i);
   assert.ok(projects.every((project) => project.links.every((link) => /^https:\/\//.test(link.href))));
 });
 
 test('resume remains part of the static public assets', async () => {
-  await access(new URL('../public/resume.pdf', import.meta.url));
+  const resumeAsset = links.resume.replace(/^\/+/, '');
+  await access(new URL(`../public/${resumeAsset}`, import.meta.url));
 });
 
 test('rendered page source has stable section targets', async () => {
   const source = await readFile(new URL('../src/app/page.jsx', import.meta.url), 'utf8');
   for (const section of ['Hero', 'Experience', 'Projects', 'Skills', 'Education', 'Contact']) {
-    assert.match(source, new RegExp(`<${section} \\/>|<${section}\\/>`));
+    assert.match(source, new RegExp(`<${section} \/>|<${section}\/>`));
   }
 });

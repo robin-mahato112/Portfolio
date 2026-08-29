@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import ThemeToggle from '../ui/ThemeToggle';
+import { portfolio } from '../../data/portfolioContent.js';
 
 const navItems = [
   { label: 'Projects', href: '#projects' },
@@ -37,7 +38,7 @@ export default function Navbar() {
       <nav className="navbar" aria-label="Primary navigation">
         <a className="site-mark" href="#home" onClick={closeMenu} aria-label="Robin Mahato, home">
           <span aria-hidden="true">R</span>
-          <strong>ROBIN MAHATO</strong>
+          <strong>{portfolio.site.name.toUpperCase()}</strong>
         </a>
         <button
           ref={toggleRef}
@@ -59,7 +60,7 @@ export default function Navbar() {
           ))}
           <ThemeToggle />
         </div>
-        <p className="availability"><span aria-hidden="true" /> AVAILABLE · 2026</p>
+        <p className="availability"><span aria-hidden="true" /> {portfolio.site.availability}</p>
       </nav>
     </div>
   );

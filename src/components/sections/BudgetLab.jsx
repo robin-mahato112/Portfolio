@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { portfolio } from '../../data/portfolioContent.js';
 
 export default function BudgetLab() {
   const [balance, setBalance] = useState(680);
@@ -18,9 +19,9 @@ export default function BudgetLab() {
   return (
     <section id="lab" className="lab-section page-band">
       <header className="section-intro lab-intro">
-        <p className="eyebrow">LIVE EXPERIMENT / 01</p>
-        <h2>Can a budget tool detect pressure before payday?</h2>
-        <span>BUDGETBRAIN AI</span>
+        <p className="eyebrow">{portfolio.lab.eyebrow}</p>
+        <h2>{portfolio.lab.heading}</h2>
+        <span>{portfolio.lab.label}</span>
       </header>
       <div className="lab-tool">
         <div className="pressure-map" aria-hidden="true">
@@ -53,7 +54,7 @@ export default function BudgetLab() {
         </div>
       </div>
       <footer className="lab-note">
-        <p>This demonstration uses simulated values and simplified logic. It is not financial advice and does not connect to a bank.</p>
+        <p>{portfolio.lab.note}</p>
         <a href="https://github.com/robin-mahato112/budgetbrain" target="_blank" rel="noopener noreferrer">View engineering notes <span aria-hidden="true">↗</span></a>
       </footer>
     </section>

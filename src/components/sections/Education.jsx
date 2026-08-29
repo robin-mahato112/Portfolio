@@ -1,9 +1,10 @@
 import { education } from '../../data/resumeData';
+import { portfolio } from '../../data/portfolioContent.js';
 
 export default function Education() {
   return (
     <section id="education" className="section">
-      <h2>Education</h2>
+      <h2>{portfolio.headings.education}</h2>
       {education.map((item) => (
         <article className="card logo-card" key={item.degree}>
           <div className="card-header">
